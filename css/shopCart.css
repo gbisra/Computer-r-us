@@ -1,0 +1,68 @@
+/*CSS*/
+
+
+.pgMsg {
+    display: block;
+    background-color: #eeeee3;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.infoMsg {
+    font-size: 1.2em;
+    padding: 1%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tcont{
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid rgba(10, 10, 10, .5);
+}
+
+table {
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    width: 100%;
+    font-size: 1.2em;
+    background-color: darkgray;
+    padding: 6px 0;
+}
+
+.row{
+    display: table;
+    width: 100%;
+}
+
+.sec1 {
+    width: 35%;
+}
+
+.sec2 {
+     width: 25%;
+}
+
+.sec3 {
+    width: 20%;
+}
+
+.sec4 {
+    width: 20%;
+}
+
+.sec5 {
+    width: 80%;
+}
+
+.sec4 {
+    width: 20%;
+}

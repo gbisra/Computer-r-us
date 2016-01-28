@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- View -->
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+
+  <body>
+    <navReplace metal:use-macro="/templating/nav.xhtml/nav_bar">
+    </navReplace>
+    
+      <div class="mainSect">
+          <div class="infoCont">
+              <div class="pgMsg">
+                <p class="infoMsg">Below you will find the current items that are in your shopping cart!</p>
+              </div>
+              <div class="tcont">
+                    <table>
+                      <caption class="title">Shopping Cart</caption>        <tr class="main row">                     
+                        <th class="sec1">Item</th>
+                        <th class="sec2">Info</th> 
+                        <th class="sec3">Qty</th> 
+                        <th class="sec4">Price</th>
+                      </tr>
+                        <tr class="row">                     
+                        <td class="sec1">aaa</td>
+                        <td class="sec2">aaa</td> 
+                        <td class="sec3">aaa</td> 
+                        <td class="sec4">aaa</td>
+                      </tr>
+                        <tr class="row">                     
+                        <th class="sec5">Total</th>
+                        <th class="sec6">$</th> 
+                      </tr>
+                  </table>
+              </div>
+              
+              <div  class="tcont">
+                <button type="button" class="btn1" id="continue">Continue Shopping</button>
+                <button type="button" class="btn2" id="checkOut">Checkout</button>
+              </div>
+                  
+
+    
+          </div>
+    
+        <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+        </footerReplace>
+    </div>
+      
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

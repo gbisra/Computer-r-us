@@ -1,0 +1,64 @@
+/*CSS*/
+
+.adminBox {
+    display: block;
+    width: 38%;
+    height: auto;
+    float: left;
+    margin: 10px 5px 5px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient( rgba(212, 213, 215, .5), rgba(190, 191, 193, .5));
+    border: 2px solid rgba(10, 10, 10, .2);
+}
+
+.secTitle {
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 5px 0 10px;
+}
+
+.under {
+    text-decoration: underline;
+}
+
+.info {
+    text-align: justify;
+    font-size: .8em;
+}
+
+.infoPick {
+    font-size: 1.3em;
+    color: red;
+    font-weight: bold;
+}
+
+.section {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+    margin: 3px;
+}
+
+.inputBox {
+    float: right;
+    width: 175px;
+    font-size: .8em;
+}
+
+.inputBoxSm {
+    float: right;
+    width: 75px;
+    font-size: .8em;
+}
+
+.inputArea {
+    display: inline-block;
+    float: right;
+    width: 175px;
+    height: 50px;
+    font-size: .8em;
+}

@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- View -->
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+
+  <body>
+    <navReplace metal:use-macro="/templating/nav.xhtml/nav_bar">
+    </navReplace>
+    <div class="mainSect">
+        <div class="keyCont">
+            <div class="leftBox">
+                <h3 class="textCat">Products</h3>
+            </div>
+            <div class="rightBox">
+                <div class="subCont">
+                <label>Product Categories:</label>
+                    <select id="filterBtn" class="filter">
+                        <option value="CPU">CPU</option>
+                        <option value="GPU">GPU</option>
+                        <option value="MotherBoard">Mother Boards</option>
+                        <option value="HardDrives">Hard Drives</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mainSect">
+            <div id="product1" class="container">
+                <div class="leftBox">
+                    <span class="catTitle"><strong>CPU</strong></span>
+                </div>
+
+                <div class="rightBox">
+                    <div class="imgBoxSm">
+                        <img src="./images/111156_l_i7.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/110591_l_i5.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/110591_l_i5_2.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/116491_l_i3.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product2" class="container">
+                <div class="leftBox">
+                    <span class="catTitle"><strong>GPU</strong></span>
+                </div>
+
+                <div class="rightBox">
+                    <div class="imgBoxSm">
+                        <img src="./images/102345_l_gpu.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/108711_l_Gpu.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product3" class="container">
+                <div class="leftBox">
+                    <span class="catTitle"><strong>Mother Boards</strong></span>
+                </div>
+
+                <div class="rightBox">
+                    <div class="imgBoxSm">
+                        <img src="./images/101725_l_MB.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/75612_l_mB.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product4" class="container">
+                <div class="leftBox">
+                    <span class="catTitle"><strong>Hard Drives</strong></span>
+                </div>
+
+                <div class="rightBox">
+                    <div class="imgBoxSm">
+                        <img src="./images/106578_l_WD.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                    <div class="imgBoxSm">
+                        <img src="./images/74462_l_HD.jpg" id="" class="prdImg"/>
+                        <span>Product Title</span>
+                        <p>product Information</p>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+            </footerReplace>
+        </div>
+    </div>
+      
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

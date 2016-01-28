@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- View -->
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+
+  <body>
+    <navReplace metal:use-macro="/templating/nav.xhtml/nav_bar">
+    </navReplace>
+    
+      <div class="mainSect">
+          <div class="infoCont">
+              <div class="pgMsg">
+                <p class="infoMsg">You are now in the admin section!</p>
+              </div>
+              <div class="adminBox">
+                  <div class="secTitle">
+                    <span class="under">Administrator Tools</span>
+                      <br/>
+                    <span class="info"> Add new products into your product line up!</span>
+                  </div>
+                  <div class="section">
+                    <label>Pick product category:</label>
+                    <select id="filterBtn" class="filter">
+                        <option value="CPU">CPU</option>
+                        <option value="GPU">GPU</option>
+                        <option value="MotherBoard">Mother Boards</option>
+                        <option value="HardDrives">Hard Drives</option>
+                    </select>
+                  </div>
+                  <div class="section">
+                    <span class="info">Items will be added to: <span id="userChoiceId" class="infoPick">aaa</span></span>
+                  </div>
+                  <div class="section">
+                    <label>Product Name:</label>
+                      <input type="text" id="pName" class="inputBox"/>
+                  </div>
+                  <div class="section">
+                    <label>Product Price:</label>
+                      <input type="text" id="pPrice" class="inputBoxSm"/>
+                  </div>
+                  <div class="section">
+                    <label>Product Info:</label>
+                      <textarea type="text" id="pInfo" class="inputArea"></textarea>
+                  </div>
+                  <div class="section">
+                    <label>Product Image:</label>
+                      <input type="text" id="pImage" class="inputBox"/>
+                  </div>
+                
+              </div>
+             
+          </div>
+    
+        <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+        </footerReplace>
+    </div>
+      
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

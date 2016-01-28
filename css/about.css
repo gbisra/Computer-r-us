@@ -1,0 +1,39 @@
+/*CSS*/
+
+
+.infoCont {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    background-color: #fff;
+    margin: 2.5px auto;
+}
+
+
+.abtSect {
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+.abtLogo {
+    display: inline-block;
+    width: 48%;
+    float: left;
+    margin: 25px auto;
+}
+
+.abtImg {
+    display: inline-block;
+    width: 48%;
+    float: right;
+    margin: 25px auto;
+    border: 2px solid rgba(10, 10, 10, .2);
+}
+
+.text {
+    float: left;
+    display: inline-block;
+}
