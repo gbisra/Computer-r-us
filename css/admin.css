@@ -62,3 +62,42 @@
     height: 50px;
     font-size: .8em;
 }
+
+.subBtn {
+    display: block;
+    width: 40%;
+    float: right;
+}
+
+/*BOX 2*/
+
+.adminBox2 {
+    display: block;
+    width: 54.5%;
+    height: auto;
+    float: right;
+    margin: 10px 5px 5px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient( rgba(212, 213, 215, .5), rgba(190, 191, 193, .5));
+    border: 2px solid rgba(10, 10, 10, .2);
+}
+
+.tableCont {
+    display: block;
+    width: 97%;
+    height: 90%;
+    margin: 0 auto;
+    background-color: #ffffff; 
+}
+
+.delBtn {
+    display: block;
+    width: 40%;
+    float: right;
+    margin: 10px;
+}
+
+.chk {
+    margin: 5px;
+}

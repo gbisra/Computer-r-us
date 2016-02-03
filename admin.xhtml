@@ -17,12 +17,12 @@
               </div>
               <div class="adminBox">
                   <div class="secTitle">
-                    <span class="under">Administrator Tools</span>
+                      <span class="under"><strong>Administrator Tools</strong></span>
                       <br/>
                     <span class="info"> Add new products into your product line up!</span>
                   </div>
                   <div class="section">
-                    <label>Pick product category:</label>
+                      <label><strong>Pick product category:</strong></label>
                     <select id="filterBtn" class="filter">
                         <option value="CPU">CPU</option>
                         <option value="GPU">GPU</option>
@@ -34,21 +34,40 @@
                     <span class="info">Items will be added to: <span id="userChoiceId" class="infoPick">aaa</span></span>
                   </div>
                   <div class="section">
-                    <label>Product Name:</label>
+                    <label><strong>Product Name:</strong></label>
                       <input type="text" id="pName" class="inputBox"/>
                   </div>
                   <div class="section">
-                    <label>Product Price:</label>
+                      <label><strong>Product Price:</strong></label>
                       <input type="text" id="pPrice" class="inputBoxSm"/>
                   </div>
                   <div class="section">
-                    <label>Product Info:</label>
+                      <label><strong>Product Info:</strong></label>
                       <textarea type="text" id="pInfo" class="inputArea"></textarea>
                   </div>
                   <div class="section">
-                    <label>Product Image:</label>
+                      <label><strong>Product Image:</strong></label>
                       <input type="text" id="pImage" class="inputBox"/>
                   </div>
+                  <button type="submit" id="insertProd" class="subBtn">Add Product</button>
+              </div>
+              <div class="adminBox2">
+                <div class="tableCont">
+                    <table>
+                      <caption class="title">Item List</caption>        
+                      <tr class="mainrow">
+                        <th class="sec5 center">Select</th>
+                        <th class="sec6 center">Item</th> 
+                        <th class="sec7 center"> In-stock</th> 
+                      </tr>
+                      <tr>                    
+                        <td class="sec5 center"><input type="checkbox" id="" name="selectItem" class="chk"/></td>
+                        <td id="" class="sec6 center">aaa</td> 
+                        <td id="" class="sec7 center">aaa</td> 
+                      </tr>
+                  </table>
+                </div>
+                <button type="button" id="delProd" class="delBtn">Delete</button>
               </div>
              
           </div>
