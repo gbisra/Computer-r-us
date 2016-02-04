@@ -14,7 +14,13 @@ body {
 
 /*--------HEADER---------*/
 
-
+#logoimg{
+    
+  width: 8%;
+    margin: 5px 18px;
+    padding-bottom: 5px;
+    
+}
 .admnLogTxt {
     margin: 5px 0;
     font-size: .8em; 
@@ -153,5 +159,12 @@ a {
     width: 33.33%;
     height: 100%;
     text-align: center;
+    
+}
+#submitq {
+    display:block;
+     margin:auto auto;
+    
+    
     
 }
