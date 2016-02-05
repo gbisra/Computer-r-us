@@ -93,6 +93,12 @@ a {
     padding: 19px 25px;
 }
 
+.cart {
+    display: block;
+    float: right;
+    width: auto;
+}
+
 .leftBox {
     display: block;
     width: 18%;
