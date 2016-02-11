@@ -7,7 +7,7 @@ $scripts = array('DBconnector.php',
                  //'Messages.php',
                  //'Parameters.php',
                  'ProductManager.php',
-                 //'ShoppingCartManager.php',
+                 'ShoppingCartManager.php',
                  'Utils.php'
                 );
 

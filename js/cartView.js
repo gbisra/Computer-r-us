@@ -1,4 +1,4 @@
-        /*<![CDATA[*/
+
         $(document).ready(function() {
 
             //
@@ -8,7 +8,7 @@
                     type: "GET",
                     dataType: 'html',
                     success: function(returnedData) {
-                        console.log("cart checkout response: ", returnedData);
+                        //console.log("cart checkout response: ", returnedData);
                         $("#productslist").html(returnedData);
 
                     },
@@ -19,28 +19,28 @@
             }
 
             loadProducts();
-
-
-            $('#productslist').on('click', 'input[data-sku-add]', function() {
-                console.log(this.getAttribute("data-sku-add"));
+            
+            
+            $('#productslist').on('click', 'button[data-sku-add]', function() {
+                //console.log(this.getAttribute("data-sku-add"));
+                console.log("click");
 
                 // get the sku
                 var sku = this.getAttribute("data-sku-add");
-                var item = $("span[data-sku-item='" + sku +"']").val();
                 var info = $("p[data-sku-info='" + sku + "']").text();
+                var price = $("p[data-sku-price='" + sku + "']").text();
                 var qty = $("input[data-sku-qty='" + sku + "']").val();
-                var price = $("td[data-sku-price='" + sku + "']").text();
-               
+                   
                 var subtotal = parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
-                console.log(item, "quantity", qty, "price", price);
+                console.log(sku, "quantity", qty, "price", subtotal);
 
-                var shoppingCartList = $("#shoppingCart");
+                //var shoppingCartList = $("#shoppingCart");
 
 
-                var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "'>"
-                    + info + " " + qty + " x $" + price + " = " + subtotal
-                    + " <input type='button' data-remove-button='remove' value='X'/></li>";
-                shoppingCartList.append(item);
+                //var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "'>"
+                  //  + info + " " + qty + " x $" + price + " = " + subtotal
+                   // + " <input type='button' data-remove-button='remove' value='X'/></li>";
+               // shoppingCartList.append(item);
 
             });
 
@@ -53,7 +53,7 @@
 
 
             // start the cart
-            $("#startCart").click(function() {
+           /* $("#startCart").click(function() {
                 console.log("Start cart.");
                 $.ajax({
                     url: "./shoppingcart.php",
@@ -130,5 +130,5 @@
 
 
         });
-        /*]]>*/
+    
 

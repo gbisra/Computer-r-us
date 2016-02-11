@@ -14,14 +14,14 @@ class ProductManager {
     }
 
     public function listProducts() {
-        $sql = "SELECT SKU, item, info, item_price FROM product";
+        $sql = "SELECT SKU, item, info, item_price, category FROM product";
         $rows = $this->db->query($sql);
         return $rows;
     }
-
+    
     public function findProduct($SKU) {
         $params = array(":sku" => $SKU);
-        $sql = "SELECT SKU, item, info, item_price FROM product WHERE SKU = :sku";
+        $sql = "SELECT SKU, item, info, item_price, category FROM product WHERE SKU = :sku";
 
         $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {

@@ -15,12 +15,14 @@ loadScripts();
             $item = $row['item'];
             $info = $row['info'];
             $price = $row['item_price'];
+            $category = $row['category'];
             $html .= "<div class='imgBoxSm'>
                         <img src='../images/110591_l_i5.jpg' class='prdImg'/>
                         <span data-sku-item='$sku'>$item</span>
-                        <p data-sku-info='$sku'>$info</p>
-                        <button data-sku-add='$sku' type='button' value='Add' id='checkbut'>Add</button>
-                        <input data-sku-qty='$sku' type='number'id='numqty' min='1' max='10' step='1' value='1'/>
+                        <p class='pInfo' data-sku-info='$sku'>$info</p>
+                        <p class='pInfo' data-sku-price='$sku'>$price</p>
+                        <input class='pIndex' data-sku-qty='$sku' type='number'id='numqty' min='1' max='10' step='1' value='1'/>
+                        <button class='pBut' data-sku-add='$sku' type='button' value='Add' id='checkbut'>Add</button>
                      </div>";
             
                     /*<tr>

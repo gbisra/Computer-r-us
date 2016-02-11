@@ -93,11 +93,35 @@ a {
     padding: 19px 25px;
 }
 
+
+/*--------PRODUCTS---------*/
 .cart {
     display: block;
     float: right;
     width: auto;
 }
+
+.pInfo {
+    font-size: .5em;
+}
+
+.pBut {
+    display: inline-block;
+    font-size: .8em;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.pIndex {
+    display: inline-block;
+    font-size: .8em;
+    width: 30px;
+    float: left;
+    margin-left: 10px;
+    
+}
+
+
 
 .leftBox {
     display: block;
