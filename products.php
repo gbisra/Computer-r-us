@@ -9,7 +9,7 @@ loadScripts();
         $pm = new ProductManager();
         $rows = $pm->listProducts();
 
-        $html = "";
+        /*$html = "";
         foreach($rows as $row) {
             $sku = $row['SKU'];
             $item = $row['item'];
@@ -31,8 +31,8 @@ loadScripts();
                         <td data-sku-price='$sku'>$price</td>
                         <td><input data-sku-add='$sku' type='button' value='Add'/></td>
                       </tr>";*/
-        }
-        echo $html;
+        //}
+        echo json_encode($rows);
         return;
 
     } else {
