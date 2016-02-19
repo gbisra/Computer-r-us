@@ -1,5 +1,14 @@
 
         $(document).ready(function() {
+            
+            Storage.prototype.setObject = function(key, value) {
+                this.setItem(key, JSON.stringify(value));
+            }
+
+            Storage.prototype.getObject = function(key) {
+                var value = this.getItem(key);
+                return value && JSON.parse(value);
+            }
 
             //
             function loadProducts() {
@@ -13,61 +22,61 @@
                          for (i=0; i<returnedData.length; i++){
                                 var prodDiv = document.createElement("div");
                                 prodDiv.className = "imgBoxSm";
-                                prodDiv.innerHTML="<img src='../images/110591_l_i5.jpg' class='prdImg'/><span data-sku-item='"+returnedData[i].sku+"'>"+returnedData[i].item+"</span><p class='pInfo' data-sku-info='"+returnedData[i].sku+"'>"+returnedData[i].info+"</p><p class='pInfo' data-sku-price='"+returnedData[i].sku+"'>"+returnedData[i].item_price+"</p><input class='pIndex' data-sku-qty='"+returnedData[i].sku+"' type='number'id='numqty' min='1' max='10' step='1' value='1'/><button class='pBut' data-sku-add='"+returnedData[i].sku+"' type='button' value='Add' id='checkbut'>Add</button>";
+                                prodDiv.innerHTML="<img src='../images/110591_l_i5.jpg' class='prdImg'/><span class='skuHdn' data-sku-SKU='"+returnedData[i].sku+"'>"+returnedData[i].SKU+"</span><span data-sku-item='"+returnedData[i].sku+"'>"+returnedData[i].item+"</span><p class='pInfo' data-sku-info='"+returnedData[i].sku+"'>"+returnedData[i].info+"</p><p class='pInfo' data-sku-price='"+returnedData[i].sku+"'>"+returnedData[i].item_price+"</p><input class='pIndex' data-sku-qty='"+returnedData[i].sku+"' type='number'id='numqty' min='1' max='10' step='1' value='1'/><button class='pBut' data-sku-add='"+returnedData[i].sku+"' type='button' value='Add' id='checkbut'>Add</button>";
                             
-                             console.log(returnedData[i].category);
-                             document.getElementById(returnedData[i].category).appendChild(prodDiv);
-                     }
+                                console.log(returnedData[i].category);
+                                document.getElementById(returnedData[i].category).appendChild(prodDiv);
+                        }      
                         
                         
-                        
+                        //Choosing an item from CPU section
                         $('#cpu').on('click', 'button[data-sku-add]', function() {
-                //console.log(this.getAttribute("data-sku-add"));
-                console.log("click");
+                            
+                            /*console.log(this.parentElement.childNodes[1].innerHTML);
+                            console.log(this.parentElement.childNodes[2].innerHTML);
+                            console.log(this.parentElement.childNodes[3].innerHTML);
+                            console.log(this.parentElement.childNodes[4].innerHTML);
+                            console.log(this.parentElement.childNodes[5].valueAsNumber);*/
+                            
 
-                // get the sku
-                var sku = this.getAttribute("data-sku-add");
-                var info = $("p[data-sku-info='" + sku + "']").text();
-                var price = $("p[data-sku-price='" + sku + "']").text();
-                var qty = $("input[data-sku-qty='" + sku + "']").val();
-                   
-                var subtotal = parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
-                console.log(sku, "quantity", qty, "price", subtotal);
-                        })},
-                    error: function(jqXHR, textStatus, errorThrown) {
+                            // get the element attributes
+                            var sku = (this).parentElement.childNodes[1].innerHTML;
+                            var name = (this).parentElement.childNodes[2].innerHTML;
+                            var info = (this).parentElement.childNodes[3].innerHTML;
+                            var price = (this).parentElement.childNodes[4].innerHTML;
+                            var qty = this.parentElement.childNodes[5].valueAsNumber;
+                            
+                            var subtotal = parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
+                                console.log(name, "quantity", qty, "price", subtotal);
+                            
+                            //put all that into an object
+                            var item = {
+                                sku : (this).parentElement.childNodes[1].innerHTML,
+                                name : (this).parentElement.childNodes[2].innerHTML,
+                                info : (this).parentElement.childNodes[3].innerHTML,
+                                price : (this).parentElement.childNodes[4].innerHTML,
+                                qty : (this).parentElement.childNodes[5].valueAsNumber,
+                                subtotal : parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2), 
+                            }; console.log(item);
+                            
+                                            
+                            var cartDataItems = cartData['items'];
+                                for(var i = 0; i < cartDataItems.length; i++) {
+                                    var item = cartDataItems[i];
+                                            localStorage.setItem("Itemlist", {items: []});
+                            
+                        });
+                    },
+                        error: function(jqXHR, textStatus, errorThrown) {
                         console.log(jqXHR.statusText, textStatus);
-                    }
+                        }
                 });
             }
 
             loadProducts();
             
-           /*prodDiv.innerHTML = "<div class='imgBoxSm'><img src='../images/110591_l_i5.jpg' class='prdImg'/><span data-sku-item='$sku'>$item</span><p class='pInfo' data-sku-info='$sku'>$info</p><p class='pInfo' data-sku-price='$sku'>$price</p><input class='pIndex' data-sku-qty='$sku' type='number'id='numqty' min='1' max='10' step='1' value='1'/><button class='pBut' data-sku-add='$sku' type='button' value='Add' id='checkbut'>Add</button></div>";*/
+                      
             
-            
-            /*$('#cpu').on('click', 'button[data-sku-add]', function() {
-                //console.log(this.getAttribute("data-sku-add"));
-                console.log("click");
-
-                // get the sku
-                var sku = this.getAttribute("data-sku-add");
-                var info = $("p[data-sku-info='" + sku + "']").text();
-                var price = $("p[data-sku-price='" + sku + "']").text();
-                var qty = $("input[data-sku-qty='" + sku + "']").val();
-                   
-                var subtotal = parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
-                console.log(sku, "quantity", qty, "price", subtotal);
-
-                //var shoppingCartList = $("#shoppingCart");
-
-
-                //var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "'>"
-                  //  + info + " " + qty + " x $" + price + " = " + subtotal
-                   // + " <input type='button' data-remove-button='remove' value='X'/></li>";
-               // shoppingCartList.append(item);
-
-            });
-
             // remove items from the car
             /*$("#shoppingCart").on("click", "input", function() {
                 // https://api.jquery.com/closest/
