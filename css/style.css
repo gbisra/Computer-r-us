@@ -118,9 +118,12 @@ a {
     width: 30px;
     float: left;
     margin-left: 10px;
-    
+
 }
 
+.skuHdn {
+    display: none;    
+}
 
 
 .leftBox {
