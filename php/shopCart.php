@@ -11,6 +11,9 @@
     // now add the variables for processing and that you created from above:
     $template->page_title = "Shopping Cart Page with PHPTAL";
 
+    $items = json_decode($_POST['items'], true);
+
+
 
     // execute the template
     try {
