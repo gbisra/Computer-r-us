@@ -5,6 +5,7 @@
   <!-- View -->
   <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
   </headReplace>
+    
 
   <body>
     <navReplace metal:use-macro="/templating/nav.xhtml/nav_bar">
@@ -45,8 +46,13 @@
         <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
         </footerReplace>
     </div>
+    
+    <script>
+        window.onload=loadCartData();
+    </script>
       
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/shopcart.js"></script>
   </body>
 </html>
