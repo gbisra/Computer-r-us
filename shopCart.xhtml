@@ -14,22 +14,22 @@
       <div class="mainSect">
           <div class="infoCont">
               <div class="pgMsg">
-                <p class="infoMsg">Below you will find the current items that are in your shopping cart!</p>
+                <p class="infoMsg">Below you will find the current shoppong cart items!</p>
               </div>
               <div class="tcont">
                   <table>
                       <caption class="title">Shopping Cart</caption>        
                         <thead >
                             <tr class="main row">                    
-                                <th class="sec1">Item</th>
-                                <th class="sec2">Info</th> 
-                                <th class="sec3">Qty</th> 
-                                <th class="sec4">Price</th>
+                                <td class="sec1">Item</td>
+                                <td class="sec2">Info</td> 
+                                <td class="sec3">Qty</td> 
+                                <td class="sec4">Price</td>
+                                <td class="sec5">Subtotal</td>
+                                <td class="sec6">Delete</td>
                             </tr>
                         </thead>
                         <tbody id="productslist">
-
-                            
                         </tbody>
                   </table>
               </div>
@@ -37,22 +37,15 @@
               <div  class="tcont">
                 <button type="button" class="btn1" id="continue">Continue Shopping</button>
                 <button type="button" class="btn2" id="checkOut">Checkout</button>
-              </div>
-                  
-
-    
+              </div>  
           </div>
     
         <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
         </footerReplace>
     </div>
-    
-    <script>
-        window.onload=loadCartData();
-    </script>
       
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/shopcart.js"></script>
   </body>
-</html>
+</html> 

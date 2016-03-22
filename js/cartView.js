@@ -9,6 +9,8 @@ $(document).ready(function() {
             var value = this.getItem(key);
             return value && JSON.parse(value);
         }
+        
+
 
 //------------LOAD PRODUCTS INTO HTML PRODUCT LIST-------------------------//
         function loadProducts() {
@@ -18,7 +20,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function(returnedData) {
                     
-                    var cartData = localStorage.setObject('autosave', {items: []});
+                   //var cartData = localStorage.setObject('autosave', {items: []});
                     
                     //console.log(returnedData);
                     //$("#productslist").html(returnedData);
@@ -42,6 +44,7 @@ $(document).ready(function() {
     
         //created a variable for the local storage
         var cartData = localStorage.getObject('autosave');
+        
         //console.log(cartData);
     
         //Choosing an item from CPU section
@@ -60,6 +63,7 @@ $(document).ready(function() {
                 console.log(name, "quantity", qty, "price", subtotal);
             
             if(cartData == null) {
+                cartData = localStorage.setObject('autosave', {items: []});
                     return;
             }
             //put all that into an object
@@ -72,8 +76,9 @@ $(document).ready(function() {
                 subtotal : parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2), 
             }; console.log(item);
             
-             cartData['items'].push(item);
-                    console.log(cartData);
+            cartData['items'].push(item);
+                console.log(cartData);
+            localStorage.setObject('autosave', cartData);
         });
 
         $('#gpu').on('click', 'button[data-sku-add]', function() {
@@ -89,6 +94,7 @@ $(document).ready(function() {
                 console.log(name, "quantity", qty, "price", subtotal);
             
             if(cartData == null) {
+                cartData = localStorage.setObject('autosave', {items: []});
                     return;
             }
 
@@ -103,7 +109,8 @@ $(document).ready(function() {
             }; console.log(item);
             
             cartData['items'].push(item);
-                    console.log(cartData);
+                console.log(cartData);
+            localStorage.setObject('autosave', cartData);
 
         });
 
@@ -120,6 +127,7 @@ $(document).ready(function() {
                 console.log(name, "quantity", qty, "price", subtotal);
             
             if(cartData == null) {
+                cartData = localStorage.setObject('autosave', {items: []});
                     return;
             }
 
@@ -134,7 +142,8 @@ $(document).ready(function() {
             }; console.log(item);
             
             cartData['items'].push(item);
-                    console.log(cartData);
+                console.log(cartData);
+            localStorage.setObject('autosave', cartData);
 
         });
 
@@ -151,6 +160,7 @@ $(document).ready(function() {
                 console.log(name, "quantity", qty, "price", subtotal);
             
             if(cartData == null) {
+                cartData = localStorage.setObject('autosave', {items: []});
                     return;
             }
 
@@ -165,10 +175,14 @@ $(document).ready(function() {
             }; console.log(item);
             
             cartData['items'].push(item);
-                    console.log(cartData);
+                console.log(cartData);
+            localStorage.setObject('autosave', cartData);
 
-        });            
+        });
     
+        $("#strtCart").click(function() {
+            window.location.href = "./shopCart.php";
+        });
 });
 
 

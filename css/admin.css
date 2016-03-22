@@ -1,5 +1,13 @@
 /*CSS*/
 
+
+.lgFrm {
+    display: block;
+    width: 200px;
+    margin: 25% auto;
+    text-align: center;
+}
+
 .adminBox {
     display: block;
     width: 38%;
@@ -100,4 +108,7 @@
 
 .chk {
     margin: 5px;
+}
+.frmImp {
+    margin: 5px 0;
 }

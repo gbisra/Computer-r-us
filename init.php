@@ -4,10 +4,15 @@
 function loadScripts() {
 
 $scripts = array('DBconnector.php',
-                 //'Messages.php',
-                 //'Parameters.php',
+                 'Messages.php',
+                 'Parameters.php',
                  'ProductManager.php',
                  'ShoppingCartManager.php',
+                 'ShowUserProfileAction.php',
+                 'UserLoginAction.php',
+                 'UserLogoutAction.php',
+                 'UserManager.php',
+                 'Session.php',
                  'Utils.php'
                 );
 

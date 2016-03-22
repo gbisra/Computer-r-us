@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- View -->
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+    
+
+  <body>
+    <navReplace metal:use-macro="/templating/nav.xhtml/nav_bar">
+    </navReplace>
+    
+      <div class="mainSect">
+          <div class="infoCont">
+              <div class="pgMsg">
+                <p class="infoMsg">Ready to make your purchase?</p>
+              </div>
+              <div class="tcont">
+                  <table>
+                      <caption class="title">Purchase Items</caption>        
+                        <thead>
+                            <tr class="row">                    
+                                <td class="sec1">Item</td>
+                                <td class="sec2">Info</td> 
+                                <td class="sec3">Qty</td> 
+                                <td class="sec4">Price</td>
+                                <td class="sec5">Subtotal</td>
+                            </tr>
+                        </thead>
+                        <tbody id="productslist">
+                        </tbody>
+                        <tfoot>
+                          <tr class="row">
+                              <td colspan="4" class="sec7">Total Price:</td>
+                              <td id="total" class="sec8"></td>
+                          </tr>                        
+                        </tfoot>
+                  </table>
+              </div>
+              
+              <div  class="tcont">
+                <button type="button" class="btn1" id="edit">Edit list</button>
+                <button type="button" class="btn2" id="complete">Confirm Payment</button>
+              </div>  
+          </div>
+    
+        <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+        </footerReplace>
+    </div>
+      
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/checkout.js"></script>
+  </body>
+</html> 

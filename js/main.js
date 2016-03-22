@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 
-
     // from: http://www.developerdrive.com/2013/04/turning-a-form-element-into-json-and-submiting-it-via-jquery/
     function ConvertFormToJSON(form){
         var array = $(form).serializeArray();
@@ -13,26 +12,27 @@ $(document).ready(function() {
         });
         return json;
     }
-
-
+    
+    var formData = ConvertFormToJSON("#loginForm");
+    
     function doLogin() {
 
         var formData = ConvertFormToJSON("#loginForm");
-        //console.log("Login data to send: ", formData);
+        console.log("Login data to send: ", formData);
 
         $.ajax({
-            url: "./login.php",
+            url: "../login.php",
             type: "POST",
             dataType: "JSON",
             data: formData,
             success: function(returnedData) {
                 console.log("Login data returned: ", returnedData);
-
                 var status = returnedData['status'];
+                
                 if(status == 'error') {
                     msgs = returnedData['msg'];
                     for(msg in msgs) {
-                        //console.log(msgs[msg]['text']);
+                        console.log(msgs[msg]['text']);
 
                         $("#AJAXMessages").html("<li class='" + msgs[msg]['type']
                             + "'" + ">" + msgs[msg]['text'] + "</li>");
@@ -41,42 +41,43 @@ $(document).ready(function() {
 
                     /* BTW, IF LOGOUT FAILED, IT'S BECAUSE THE SESSION EXPIRED
                        YOU COULD EASILY JUST RESET THE HTML IN THE PAGE
-                     */
-
-                } else {
-                    // you're in, show profile
-                    console.log(returnedData['user']);
-                    // THIS SECTION HAS TO BE THE SAME AS index.html, LINE 21
-                    $("#profileContainer").html("<div id='userProfile'>"
-                        + "<h2>User Profile (only visible when logged in):</h2>\n"
-                        + "<span><i>login: </i>" + returnedData['user']['user_name'] + "</span> "
-                        + "<span><i>first name: </i>" + returnedData['user']['first_name'] + "</span> "
-                        + "<span><i>last name: </i>" + returnedData['user']['last_name'] + "</span>"
-                        +"<br/><br/><br/></div>");
-
-                    // remove login form
-                    $("#loginForm").remove();
-
-                    // create logout form
-                    $("#loginFormContainer").after('<div id="logoutFormContainer"><form id="logoutForm"><fieldset><legend>Logout Form</legend><label for="password">Password: </label><input id="logoutbutton" type="button" value="Logout"/><input type="hidden" value="logout" name="logoutButton"/></fieldset></form></div>');
-                    $("#logoutbutton").bind("click", doLogout);
-
+                     */ 
+                } else { 
+                    window.location.href = "./admin.php";
+                    
                 }
-
-
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log("AJAX Error", textStatus);
+            console.log("AJAX Error", textStatus);
             }
         });
     }
+    
+    function showprofile (){
+        console.log("Login data to send: ", formData);
+
+        $.ajax({
+            url: "../login.php",
+            type: "POST",
+            dataType: "JSON",
+            data: formData,
+            success: function(formData) {
+                console.log("Login data returned: ", formData);
+    
+        
+                console.log(formData['users']);
+                $("#profileContainer").html("<div id='userProfile'>"
+                + "<p>" + formData['users']['user_name'] + "</p>");
+            }
+        }); 
+    }showprofile();
 
     function doLogout() {
         var formData = {logout: "true"};
         //console.log("Logout data to send: ", formData);
 
         $.ajax({
-            url: "./logout.php",
+            url: "../logout.php",
             type: "POST",
             dataType: "JSON",
             data: formData,

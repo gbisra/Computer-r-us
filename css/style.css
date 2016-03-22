@@ -11,6 +11,13 @@ body {
     margin: 0 auto !important;
 }
 
+td {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
 
 /*--------HEADER---------*/
 
@@ -61,6 +68,7 @@ a {
     margin-left: 15px;
     padding: 3px 5px;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 .btnTxt {
@@ -200,4 +208,20 @@ a {
     
     
     
+}
+
+
+.sec7 {
+   width: 70%; 
+    text-align: right !important;
+    padding-right: 10px;
+}
+
+.sec8 {
+    width: 30%;
+}
+
+.admnLogbtn {
+    margin-top: 10px;
+    margin-bottom: -10px;
 }

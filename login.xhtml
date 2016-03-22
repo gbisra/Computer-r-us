@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- View -->
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+    
+
+  <body>
+      <div class="lgFrm">
+          <h3>Admin Sign-In</h3>
+          
+          <form id="loginForm">
+              <fieldset>
+                  <legend>Admin Login</legend>
+                  <input id="user_name" type="text" placeholder="user_name" name="user_name"
+                  autofocus="autofocus"/><br/><br/>
+                  <input id="password" type="password" placeholder="password" name="password"/><br/><br/>
+                  <input id="loginbutton" type="button" value="Login"/>
+                  <input id="resetLoginForm" type="reset" value="Reset"/>
+              </fieldset>
+          </form>
+          <div id="messages">
+            <p>Messages:</p>
+            <ul id="AJAXMessages">
+            </ul>
+          </div>
+      </div>
+      
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    </body>    
+</html>
